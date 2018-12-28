@@ -5,8 +5,8 @@ The repository hosting files for the application represents the use of Google Ma
 ## Getting Started:
 
 After downloading / cloning the repo run:
-> npm intall - Install packages.
->  npm start - To run React app locally on your client.
+- > npm intall - Install packages.
+- > npm start - To run React app locally on your client.
 
 ## Notes:
 
