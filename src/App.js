@@ -1,15 +1,32 @@
 import React, { Component } from 'react'
-import mapHelper from './Utilities/helper'
 import axios from 'axios'
 import './App.css'
 
 export default class App extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
       places: []
     }
+  }
+
+  // Map Initialization for API call on Google Maps
+  initMap = () => {
+    const map = new window.google.maps.Map(document.getElementById('map'), {
+      center: { lat: 40.7413549, lng: -73.9980244 },
+      zoom: 10
+    })
+  }
+
+  // Create and generate script for the window & initMap function^
+  genScript = (url) => {
+    const script = document.createElement('script')
+    script.src = url
+    script.defer = true
+    script.async = true
+    document.body.appendChild(script)
+    window.initMap = mapHelper.initMap
   }
 
   // Configuration and calls for API from foursqaure.
@@ -43,16 +60,17 @@ export default class App extends Component {
     }
   }
 
-  async componentDidMount () {
+
+  async componentDidMount() {
     try {
-      mapHelper.genScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3&callback=initMap')
+      this.genScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3&callback=initMap')
       this.getPlaces()
     } catch (err) {
       throw (err)
     }
   }
 
-  render () {
+  render() {
     return (
       <main className='App'>
 
