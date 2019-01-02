@@ -23,8 +23,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "eslint": "^5.11.1",
-    "eslint-config-google": "^0.11.0"
-  }
+  "devDependencies": {}
 }
