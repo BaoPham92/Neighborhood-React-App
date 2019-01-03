@@ -54,11 +54,28 @@ export default class App extends Component {
       zoom: 15
     })
 
+    // Popup window for when clicking map markers
+    var infoWindow = new window.google.maps.InfoWindow
+
+    // Loop iteration for creating markers based on state data
     this.state.places.filter(data => {
+
+      // Information for infoWindow
+      var contentWindow = `${data.venue.name}`
+
       var marker = new window.google.maps.Marker({
         position: { lat: data.venue.location.lat, lng: data.venue.location.lng },
         map: map,
         title: data.venue.name
+      })
+
+      marker.addListener('click', () => {
+
+        // Change window content
+        infoWindow.setContent(contentWindow)
+
+        // Opening window of marker
+        infoWindow.open(map, marker)
       })
     })
   }
