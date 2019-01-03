@@ -66,6 +66,7 @@ export default class App extends Component {
       var marker = new window.google.maps.Marker({
         position: { lat: data.venue.location.lat, lng: data.venue.location.lng },
         map: map,
+        animation: window.google.maps.Animation.DROP,
         title: data.venue.name
       })
 
