@@ -6,6 +6,8 @@ export default class ContextProvider extends Component {
         super()
 
         this.state = {
+            queryInput: '',
+            locationInput: ''
         }
     }
 

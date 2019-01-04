@@ -16,6 +16,22 @@ export default class UserWindow extends Component {
 
                 <div className="search-box">
 
+                    <DebounceInput
+                        type="text"
+                        placeholder="Search Location"
+                        minLength={2}
+                        debounceTimeout={225}
+
+                    />
+
+                    <DebounceInput
+                        type="text"
+                        placeholder="Search Activity"
+                        minLength={2}
+                        debounceTimeout={225}
+
+                    />
+                
                 </div>
 
                 <div className="results-window">
