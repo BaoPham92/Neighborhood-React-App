@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { DebounceInput } from 'react-debounce-input'
 
 export default class UserWindow extends Component {
     constructor(props) {
