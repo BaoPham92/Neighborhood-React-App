@@ -1,5 +1,8 @@
-import React, { Component } from 'react' 
+import React, { Component } from 'react'
 import axios from 'axios'
+
+// Component imports
+import UserWindow from './UserWindow.js'
 
 export default class Map extends Component {
     constructor(props) {
@@ -83,7 +86,11 @@ export default class Map extends Component {
 
     render() {
         return (
-            <div id="map">
+            <div>
+                <UserWindow {...this.props}/>
+
+                <div id="map">
+                </div>
             </div>
         )
     }

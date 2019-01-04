@@ -15,7 +15,7 @@ body {
 
 .search-box {
     display: grid;
-    grid-template-columns: 37.5vmin;
+    grid-template-columns: 20vmin;
     position: fixed;
     margin: 10px;
     background-color: rgb(255, 255, 255);
@@ -23,7 +23,7 @@ body {
     border-radius: 4px;
     top: 55px;
     left: 0;
-    z-index: 1;
+    z-index: 999;
 }
 
 .search-box input {

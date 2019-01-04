@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom'
 import './App.css'
 
 // Components 
-import UserWindow from './Components/UserWindow.js'
 import Map from './Components/Map.js'
 
 // Utility Components
@@ -26,13 +25,7 @@ export default class App extends Component {
           <Route exact path={'/'}
             render={() => (
               <myContext.Consumer>
-                {propData => 
-                <div>
-                <Map {...propData} /> 
-
-                <UserWindow {...propData} />
-                </div>
-                }
+                { propData => <Map {...propData} /> }
               </myContext.Consumer>
           )}/>
 
