@@ -21,7 +21,6 @@ export default class UserWindow extends Component {
                         placeholder="Search Location"
                         minLength={2}
                         debounceTimeout={225}
-
                     />
 
                     <DebounceInput
@@ -29,7 +28,6 @@ export default class UserWindow extends Component {
                         placeholder="Search Activity"
                         minLength={2}
                         debounceTimeout={225}
-
                     />
                 
                 </div>

@@ -95,5 +95,8 @@ function loadScript(url) {
     script.src = url
     script.defer = true
     script.async = true
-    window.document.body.appendChild(script)
+
+    !(document.querySelector('script').getAttribute('src') === url) 
+    ? window.document.body.appendChild(script) 
+    : console.log('Already a script tag. Prevented duplicated script tag || Possible Error.')
 }
