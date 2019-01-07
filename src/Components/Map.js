@@ -23,9 +23,6 @@ export default class Map extends Component {
 
     }
 
-    componentDidMount() {
-    }
-
     render() {
         return (
             <div>

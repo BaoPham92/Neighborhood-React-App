@@ -10,16 +10,19 @@ export default class ContextProvider extends Component {
 
         this.state = {
             query: '',
-            places: [],
-            getPlaces: () => {
+            center: [],
+            venues: [],
+            markers: [],
+
+            getVenues: () => {
                 const params = {
-                    client_id: '4UATXVRF0X3ABP1LJFJ0BVAZMC4V2I3Q53CVGJFN4Z0Z0NJV',
-                    client_secret: 'LDAMUDHRRP3S0L43N03EXJWFZLUNXH50DOZZALE5ASA3DVNJ',
+                    client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
+                    client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',
                     v: '20180323',
                     near: `New York City, NY`,
                     query: 'coffee',
-                    limit: 50,
-                    radius: 5000
+                    limit: 5,
+                    radius: 50
                 }
 
                 // axios API call for returning information based on criterias from (params) variable above.
@@ -27,8 +30,18 @@ export default class ContextProvider extends Component {
 
                 axios.get(endPoint)
                     .then((response) => {
+                        const center = response.data.response.geocode.center
+                        const venues = response.data.response.groups[0].items
+                        const markers = venues.map((index) => {
+                            return {
+                                lat: index.venue.location.lat,
+                                lng: index.venue.location.lng,
+                                title: index.venue.name
+                            }
+                        })
                         console.log(response)
-                        this.setState({ places: response.data.response.groups[0].items })
+                        console.log(center, venues, markers)
+                        this.setState({ center, venues, markers })
                     })
                     .catch((error) => {
                         console.log(error)
@@ -38,7 +51,7 @@ export default class ContextProvider extends Component {
     }
 
     componentDidMount() {
-        this.state.getPlaces()
+        this.state.getVenues()
     }
 
     render() {
