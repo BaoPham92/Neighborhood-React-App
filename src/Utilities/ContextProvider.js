@@ -29,9 +29,10 @@ export default class ContextProvider extends Component {
                 const endPoint = 'https://api.foursquare.com/v2/venues/explore?' + new URLSearchParams(params);
 
                 axios.get(endPoint)
-                    .then((response) => {
-                        const center = response.data.response.geocode.center
-                        const venues = response.data.response.groups[0].items
+                    .then((response) => response.json())
+                    .then((results) => {
+                        const center = results.data.response.geocode.center
+                        const venues = results.data.response.groups[0].items
                         const markers = venues.map((index) => {
                             return {
                                 lat: index.venue.location.lat,
@@ -39,7 +40,7 @@ export default class ContextProvider extends Component {
                                 title: index.venue.name
                             }
                         })
-                        console.log(response)
+                        console.log(results, response)
                         console.log(center, venues, markers)
                         this.setState({ center, venues, markers })
                     })
@@ -51,7 +52,7 @@ export default class ContextProvider extends Component {
     }
 
     componentDidMount() {
-        this.state.getVenues()
+        // this.state.getVenues()
     }
 
     render() {

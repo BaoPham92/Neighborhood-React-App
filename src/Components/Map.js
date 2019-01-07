@@ -8,9 +8,11 @@ import UserWindow from './UserWindow.js'
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={8}
-        defaultCenter={{ lat: -34.397, lng: 150.644 }}
+        center={this.props.center}
     >
-        {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+        {this.props.markers && this.props.markers.map(marker, key) => (
+            <Marker key={key} position={{ lat: marker.lat, lng: marker.lng }} title={{title: marker.title}} />
+        )}
     </GoogleMap>
 ))
 
