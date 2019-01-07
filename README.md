@@ -8,10 +8,12 @@ After downloading / cloning the repo run:
 - > npm intall - Install packages.
 - > npm start - To run React app locally on your client.
 
-## Tools:
+## Tools / Resources:
 - [Axios](https://github.com/axios/axios) added as it can be used both server and client side. The flexibility is useful for possible server side additions.
 
 - [FourSquare](https://developer.foursquare.com/) The next best used places API but also has some nice features such as having more extensive coverage globally and filter options. Also, until getting a premium google API sub this will help reduce some of the requests that you are limited too.
+
+- [react-google-maps & explanations](https://tomchentw.github.io/react-google-maps/#introduction) Is the website that gave me insight on using a more clean approach rather than the previous map setup of building and appending a script tag to initialize the [Google Maps](https://developers.google.com/maps/documentation/) within ReactJS as one example.
 
 ## Notes:
 
