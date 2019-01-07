@@ -31,3 +31,8 @@ body {
     margin: 5% 8%;
     text-align: center;
 }
+
+.search-box p {
+    font-size: 10px;
+    text-align: center;
+}

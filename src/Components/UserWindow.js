@@ -4,7 +4,6 @@ import { DebounceInput } from 'react-debounce-input'
 export default class UserWindow extends Component {
     constructor(props) {
         super(props)
-
         this.state = {
 
         }
@@ -15,19 +14,15 @@ export default class UserWindow extends Component {
             <div className="user-window">
 
                 <div className="search-box">
+                    <p>Search Activities:</p>
 
                     <DebounceInput
                         type="text"
-                        placeholder="Search Location"
+                        placeholder="Food, etc."
                         minLength={2}
                         debounceTimeout={225}
-                    />
-
-                    <DebounceInput
-                        type="text"
-                        placeholder="Search Activity"
-                        minLength={2}
-                        debounceTimeout={225}
+                        onChange={(e) => { this.props.queryHandler(e.target.value) }}
+                        value={this.props.query}
                     />
                 
                 </div>

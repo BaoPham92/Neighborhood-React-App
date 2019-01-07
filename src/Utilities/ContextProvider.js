@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import myContext from './Context'
+import escapeRegExp from 'escape-string-regexp'
 
 export default class ContextProvider extends Component {
     constructor(props) {
         super()
 
         this.state = {
-            queryInput: '',
-            locationInput: ''
+            query: ''
         }
     }
 
