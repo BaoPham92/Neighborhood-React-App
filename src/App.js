@@ -29,6 +29,7 @@ export default class App extends Component {
   }
 
   componentDidMount() {
+    // Axios API call for FourSquare API.
     MapAPI.getVenues()
       .then((results) => {
         const center = results.data.response.geocode.center

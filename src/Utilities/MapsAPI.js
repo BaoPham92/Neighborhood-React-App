@@ -2,6 +2,8 @@ import axios from 'axios'
 
 class apiUtility {
     static callFetch() {
+        
+        // Parameter / configuration
         const params = {
             client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
             client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',

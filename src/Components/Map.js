@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
-import { compose, withProps, withStateHandlers } from 'recompose'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
@@ -10,6 +9,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
         {/* Conditional for Marker rendering */}
         {props.markers &&
             props.markers.map((marker, key) => {
+
                 // Infowindow info if title === marker title
                 const markerInfo = props.venues.find(index => index.venue.name === marker.title)
                 console.log(markerInfo)
@@ -22,6 +22,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                         onClick={() => props.toggleMarker(marker)}
                     >
 
+                        {/* InforWindow data render upon contional */}
                         {marker.isActive && markerInfo && (
                             <InfoWindow>
                                 <React.Fragment>
