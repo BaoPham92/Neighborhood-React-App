@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
 
 // Component imports
-import UserWindow from './UserWindow.js'
+// import UserWindow from './UserWindow.js'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={14}
-        defaultCenter={props.center}
-    >
+        center={props.center}>
+
         {props.markers &&
-            props.markers
-                .map((marker, key) => (
-                    <Marker key={key} position={{ lat: marker.lat, lng: marker.lng }} title={marker.title} />
+            props.markers.map((marker, key) => (
+                    <Marker key={key}
+                        position={{ lat: marker.lat, lng: marker.lng }}
+                        title={marker.title} 
+                        
+                        // {<InfoWindow></InfoWindow>}
+                        />
                 ))}
     </GoogleMap>
 ))
@@ -20,10 +24,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 export default class Map extends Component {
     constructor(props) {
         super()
-
-        this.state = {
-        }
-
     }
 
     render() {
