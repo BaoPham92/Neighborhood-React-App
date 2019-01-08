@@ -9,21 +9,42 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
         {/* Conditional for Marker rendering */}
         {props.markers &&
-            props.markers.map((marker, key) => (
-                <Marker
-                    key={key}
-                    position={{ lat: marker.lat, lng: marker.lng }}
-                    title={marker.title}
-                    onClick={() => props.toggleMarker(marker)}
-                >
+            props.markers.map((marker, key) => {
+                // Infowindow info if title === marker title
+                const markerInfo = props.venues.find(index => index.venue.name === marker.title)
+                console.log(markerInfo)
 
-                    {marker.isActive && (
-                        <InfoWindow>
-                            <h1>Something</h1>
-                        </InfoWindow>
-                    )}
-                </Marker>
-            ))}
+                return (
+                    <Marker
+                        key={key}
+                        position={{ lat: marker.lat, lng: marker.lng }}
+                        title={marker.title}
+                        onClick={() => props.toggleMarker(marker)}
+                    >
+
+                        {marker.isActive && markerInfo && (
+                            <InfoWindow>
+                                <React.Fragment>
+                                    <section className="info-window">
+
+                                        <h1>{markerInfo.venue.name}</h1>
+
+                                        <h2>Brief Summary:</h2>
+                                        <p>{markerInfo.reasons.items[0].summary}</p>
+
+                                        <h3>Type Of Place:</h3>
+                                        <p>{markerInfo.venue.categories[0].name}</p>
+                                        
+                                        <h3>Location And Hours:</h3>
+                                        <p>{markerInfo.venue.location.address}</p>
+
+                                    </section>
+                                </React.Fragment>
+                            </InfoWindow>
+                        )}
+                    </Marker>
+                )
+            })}
     </GoogleMap>
 ))
 
