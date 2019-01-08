@@ -8,7 +8,7 @@ class apiUtility {
             v: '20180323',
             near: `New York City, NY`,
             query: 'coffee',
-            limit: 5,
+            limit: 2,
             radius: 50
         }
 

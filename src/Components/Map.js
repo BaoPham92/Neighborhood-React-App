@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from "react-google-maps"
-
-// Component imports
-// import UserWindow from './UserWindow.js'
+import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
+import { compose, withProps, withStateHandlers } from 'recompose'
 
 const MyMapComponent = withScriptjs(withGoogleMap((props) =>
     <GoogleMap
         defaultZoom={14}
         center={props.center}>
 
+        {/* Conditional for Marker rendering */}
         {props.markers &&
             props.markers.map((marker, key) => (
-                    <Marker key={key}
-                        position={{ lat: marker.lat, lng: marker.lng }}
-                        title={marker.title} 
-                        
-                        // {<InfoWindow></InfoWindow>}
-                        />
-                ))}
+                <Marker
+                    key={key}
+                    position={{ lat: marker.lat, lng: marker.lng }}
+                    title={marker.title}
+                    onClick={() => props.toggleMarker(marker)}
+                >
+
+                    {marker.isActive && (
+                        <InfoWindow>
+                            <h1>Something</h1>
+                        </InfoWindow>
+                    )}
+                </Marker>
+            ))}
     </GoogleMap>
 ))
 

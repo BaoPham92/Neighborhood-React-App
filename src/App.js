@@ -14,7 +14,17 @@ export default class App extends Component {
       query: '',
       center: [],
       venues: [],
-      markers: []
+      markers: [],
+      toggleMarker: marker => {
+
+        marker.isActive = true
+        this.setState({ markers: Object.assign(this.state.markers, marker) })
+
+        return this.state.markers.map((index) => {
+          index.isActive = false
+          return index
+        })
+      },
     }
   }
 
