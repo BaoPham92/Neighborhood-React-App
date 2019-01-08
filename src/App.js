@@ -5,31 +5,44 @@ import './App.css'
 // Components 
 import Map from './Components/Map.js'
 
-// Utility Components
-import myContext from './Utilities/Context.js'
-import ContextProvider from './Utilities/ContextProvider'
+import MapAPI from './Utilities/MapsAPI.js'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
+      query: '',
+      center: [],
+      venues: [],
+      markers: []
     }
+  }
+
+  componentDidMount() {
+    MapAPI.getVenues()
+      .then((results) => {
+        const center = results.data.response.geocode.center
+        const venues = results.data.response.groups[0].items
+        const markers = venues.map((index) => {
+          return {
+            lat: index.venue.location.lat,
+            lng: index.venue.location.lng,
+            title: index.venue.name
+          }
+        })
+        this.setState({ center, venues, markers })
+        console.log(results, center, venues, markers)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   }
 
   render() {
     return (
       <main className='App'>
-        <ContextProvider>
-
-          <Route exact path={'/'}
-            render={() => (
-              <myContext.Consumer>
-                { propData => <Map {...propData} /> }
-              </myContext.Consumer>
-          )}/>
-
-        </ContextProvider>
+        <Map {...this.state} />
       </main>
     )
   }
