@@ -3,14 +3,17 @@ import React, { Component } from 'react'
 export default class ResultsWindow extends Component {
 
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         return (
             <ul className="Results-Window">
-                {this.props.venues && this.props.venues.map((index, key) => (
+            {/* To toggle infowindow onClick and list markers */}
+                {this.props.venues && this.props.venues.map((index) => (
 
                     <li
-                        key={key}
-                        className="Results-List">
+                        key={index.id}
+                        className="Results-List"
+                        onClick={() => this.props.itemToggle(index)}
+                        >
                         {index.name}
                     </li>
 

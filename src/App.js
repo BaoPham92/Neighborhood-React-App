@@ -31,6 +31,8 @@ export default class App extends Component {
 
         const venue = this.state.venues.find(index => index.id === marker.id)
 
+        // Difference of details merged. 
+        // From Udacity students on slack call for helping with this.
         MapAPI.idDetails(marker.id)
           .then(res => {
             const newVenue = Object.assign((venue, res.data.response.venue))
@@ -40,6 +42,14 @@ export default class App extends Component {
       updateMarkers: (updatedMarkers) => {
         this.setState(updatedMarkers)
       },
+
+      // Toggle infoWindow for items.
+      itemToggle: venue => {
+        const marker = this.state.markers.find(marker => marker.id === venue.id)
+        console.log(venue, marker, this.state.markers)
+
+        this.state.toggleMarker(marker)
+      }
     }
   }
 
@@ -57,6 +67,7 @@ export default class App extends Component {
             lng: index.location.lng,
             title: index.name,
             id: index.id,
+            isActive: false,
             isShowing: true
           }
         })

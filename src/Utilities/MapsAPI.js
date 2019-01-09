@@ -5,8 +5,8 @@ class apiUtility {
         
         // Parameter / configuration
         const params = {
-            client_id: '3S3Z01DGDZKC512ISDMGGJ1OCFBSHTB0CPN4HKXQ1HFSFBAX',
-            client_secret: 'WXUKLTPIEAVA1INPRRXZJFUCMQFBPOVW3VMKXBH4M3L5IPKR',
+            client_id: 'EHWACHKQJRQYJFTBPAUYCY5JPR2RWEQ04ENJQFYZE25QJ1WU',
+            client_secret: 'BM1YIPUQUNZ4VSV5DF1DBNG0BLL0UEF4RNVFRL4IPRYBBHSR',
             v: '20180323',
             near: `Washington`,
             query: 'coffee',
@@ -28,8 +28,8 @@ class apiUtility {
         
         // Parameter / configuration
         const params = {
-            client_id: '4UATXVRF0X3ABP1LJFJ0BVAZMC4V2I3Q53CVGJFN4Z0Z0NJV',
-            client_secret: 'LDAMUDHRRP3S0L43N03EXJWFZLUNXH50DOZZALE5ASA3DVNJ',
+            client_id: 'EHWACHKQJRQYJFTBPAUYCY5JPR2RWEQ04ENJQFYZE25QJ1WU',
+            client_secret: 'BM1YIPUQUNZ4VSV5DF1DBNG0BLL0UEF4RNVFRL4IPRYBBHSR',
             v: '20180323'
         }
 
