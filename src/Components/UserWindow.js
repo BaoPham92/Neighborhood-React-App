@@ -14,35 +14,18 @@ export default class UserWindow extends Component {
         }
     }
     markerFinder = (e) => {
+        this.setState({ query: e.target.value })
         const reg = new RegExp(escaperegexp(this.state.query).toLowerCase().trim())
 
-        this.setState({ query: e.target.value })
+        const updated = this.props.venues.map(venue => {
+            const currentMarkers = this.props.markers.find(marker => marker.title === venue.name)
+            console.log(currentMarkers)
 
-        // If original placeholder for markers are empty, replenish.
-        if (this.props.markers === undefined) {
-            this.props.updateMarkers({
-                markers: this.props.venues.map((index) => {
-                    return {
-                        lat: index.venue.location.lat,
-                        lng: index.venue.location.lng,
-                        title: index.venue.name,
-                        id: index.venue.id
-                    }
-                })
-            })
-        }
-
-        // Update temp placeholder container for original markers
-        this.setState({ prevMarkers: this.props.markers })
-
-        const markers = this.state.prevMarkers.map((index) => {
-            if (reg.test(index.title.toLowerCase()) === true) {
-                console.log(index)
-                return index
-            }
-            // Clears the state from App.js when empty
-            this.props.updateMarkers({ markers })
+            reg.test(venue.name.toLowerCase())
+                ? currentMarkers.isShowing = true
+                : currentMarkers.isShowing = false
         })
+        this.props.updateMarkers({ updated })
     }
 
     render() {

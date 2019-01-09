@@ -28,8 +28,15 @@ export default class App extends Component {
 
         marker.isActive = true
         this.setState({ markers: Object.assign(this.state.markers, marker) })
+
+        const venue = this.state.venues.find(index => index.id === marker.id)
+
+        MapAPI.idDetails(marker.id)
+          .then(res => {
+            const newVenue = Object.assign((venue, res.data.response.venue))
+            this.setState({ venues: Object.assign(this.state.venues, newVenue) })
+          })
       },
-      
       updateMarkers: (updatedMarkers) => {
         this.setState(updatedMarkers)
       },
@@ -49,7 +56,8 @@ export default class App extends Component {
             lat: index.location.lat,
             lng: index.location.lng,
             title: index.name,
-            id: index.id
+            id: index.id,
+            isShowing: true
           }
         })
         this.setState({ center, venues, markers })
@@ -63,7 +71,7 @@ export default class App extends Component {
   render() {
     return (
       <main className='App'>
-        <UserWindow {...this.state}/>
+        <UserWindow {...this.state} />
         <Map {...this.state} />
       </main>
     )

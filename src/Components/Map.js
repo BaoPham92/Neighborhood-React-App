@@ -8,44 +8,44 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
         {/* Conditional for Marker rendering */}
         {props.markers &&
-            props.markers.map((marker) => {
+            props.markers
+                .filter(marker => marker.isShowing)
+                .map((marker) => {
 
-                // Infowindow info if title === marker title
-                const markerInfo = props.venues.find(index => index.name === marker.title)
+                    // Infowindow info if title === marker title
+                    const markerInfo = props.venues.find(index => index.name === marker.title)
+                    // console.log(markerInfo)
 
-                return (
-                    <Marker
-                        key={marker.id}
-                        position={{ lat: marker.lat, lng: marker.lng }}
-                        title={marker.title}
-                        onClick={() => props.toggleMarker(marker)}
-                    >
+                    return (
+                        <Marker
+                            key={marker.id}
+                            position={{ lat: marker.lat, lng: marker.lng }}
+                            title={marker.title}
+                            onClick={() => props.toggleMarker(marker)}
+                        >
 
-                        {/* InforWindow data render upon contional */}
-                        {marker.isActive && markerInfo && (
-                            <InfoWindow>
-                                <React.Fragment>
-                                    <section className="info-window">
+                            {/* InforWindow data render upon contional */}
+                            {marker.isActive && markerInfo && (
+                                <InfoWindow>
+                                    <React.Fragment>
+                                        <section className="info-window">
 
-                                        <h1>{markerInfo.venue.name}</h1>
-                                        <hr></hr>
+                                            <h1>{markerInfo.name}</h1>
+                                            <hr></hr>
 
-                                        <h2>Brief Summary:</h2>
-                                        <p>{markerInfo.reasons.items[0].summary}</p>
+                                            <h3>Type Of Place:</h3>
+                                            <p>{markerInfo.categories[0].name}</p>
 
-                                        <h3>Type Of Place:</h3>
-                                        <p>{markerInfo.venue.categories[0].name}</p>
+                                            <h3>Location And Hours:</h3>
+                                            <p>{markerInfo.location.address}</p>
 
-                                        <h3>Location And Hours:</h3>
-                                        <p>{markerInfo.venue.location.address}</p>
-
-                                    </section>
-                                </React.Fragment>
-                            </InfoWindow>
-                        )}
-                    </Marker>
-                )
-            })}
+                                        </section>
+                                    </React.Fragment>
+                                </InfoWindow>
+                            )}
+                        </Marker>
+                    )
+                })}
     </GoogleMap>
 ))
 
