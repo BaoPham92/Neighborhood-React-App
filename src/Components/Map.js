@@ -8,14 +8,14 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
         {/* Conditional for Marker rendering */}
         {props.markers &&
-            props.markers.map((marker, key) => {
+            props.markers.map((marker) => {
 
                 // Infowindow info if title === marker title
                 const markerInfo = props.venues.find(index => index.venue.name === marker.title)
 
                 return (
                     <Marker
-                        key={key}
+                        key={marker.id}
                         position={{ lat: marker.lat, lng: marker.lng }}
                         title={marker.title}
                         onClick={() => props.toggleMarker(marker)}

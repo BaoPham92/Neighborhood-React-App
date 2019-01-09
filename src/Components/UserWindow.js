@@ -25,7 +25,8 @@ export default class UserWindow extends Component {
                     return {
                         lat: index.venue.location.lat,
                         lng: index.venue.location.lng,
-                        title: index.venue.name
+                        title: index.venue.name,
+                        id: index.venue.id
                     }
                 })
             })
