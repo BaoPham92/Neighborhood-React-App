@@ -12,11 +12,9 @@ export default class ResultsWindow extends Component {
                     key={key} 
                     className="Results-List"
                     onClick={() => {
-                        this.props.markers.map(marker => {
-                            this.props.toggleMarker(marker)
-                        })
+                        this.props.listItemToggle(index.venue)
                     }}>
-                        {index.venue.name}
+                        {index.name}
                     </li>
 
                 ))}

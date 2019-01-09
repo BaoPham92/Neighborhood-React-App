@@ -5,12 +5,12 @@ class apiUtility {
         
         // Parameter / configuration
         const params = {
-            client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
-            client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',
+            client_id: '3S3Z01DGDZKC512ISDMGGJ1OCFBSHTB0CPN4HKXQ1HFSFBAX',
+            client_secret: 'WXUKLTPIEAVA1INPRRXZJFUCMQFBPOVW3VMKXBH4M3L5IPKR',
             v: '20180323',
             near: `Washington`,
             query: 'coffee',
-            limit: 15,
+            limit: 3,
             radius: 500
         }
 
@@ -24,10 +24,32 @@ class apiUtility {
             }
         })
     }
+    static idFetch(inputId) {
+        
+        // Parameter / configuration
+        const params = {
+            client_id: '3S3Z01DGDZKC512ISDMGGJ1OCFBSHTB0CPN4HKXQ1HFSFBAX',
+            client_secret: 'WXUKLTPIEAVA1INPRRXZJFUCMQFBPOVW3VMKXBH4M3L5IPKR',
+            v: '20180323'
+        }
+
+        // axios API call for returning information based on criterias from (params) variable above.
+        const endPoint = `https://api.foursquare.com/v2/venues/${inputId}?` + new URLSearchParams(params)
+
+        return axios.get(endPoint, {
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json"
+            }
+        })
+    }
 }
 
 export default class MapAPI {
     static getVenues() {
         return apiUtility.callFetch()
+    }
+    static idDetails(inputId) {
+        return apiUtility.idFetch(inputId)
     }
 }

@@ -16,20 +16,23 @@ export default class App extends Component {
       center: [],
       venues: [],
       markers: [],
+      toggleMarkerOff: () => {
+        const marker = this.state.markers.map(marker => {
+          marker.isActive = false
+          return marker
+        })
+        this.setState({ markers: Object.assign(this.state.markers, marker) })
+      },
       toggleMarker: marker => {
+        this.state.toggleMarkerOff()
 
         marker.isActive = true
         this.setState({ markers: Object.assign(this.state.markers, marker) })
-
-        return this.state.markers.map((index) => {
-          index.isActive = false
-          return index
-        })
       },
       
       updateMarkers: (updatedMarkers) => {
         this.setState(updatedMarkers)
-      }
+      },
     }
   }
 
@@ -38,13 +41,15 @@ export default class App extends Component {
     MapAPI.getVenues()
       .then((results) => {
         const center = results.data.response.geocode.center
-        const venues = results.data.response.groups[0].items
+        const venues = results.data.response.groups[0].items.map((index) => {
+          return index.venue
+        })
         const markers = venues.map((index) => {
           return {
-            lat: index.venue.location.lat,
-            lng: index.venue.location.lng,
-            title: index.venue.name,
-            id: index.venue.id
+            lat: index.location.lat,
+            lng: index.location.lng,
+            title: index.name,
+            id: index.id
           }
         })
         this.setState({ center, venues, markers })
