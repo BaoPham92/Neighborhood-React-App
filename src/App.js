@@ -54,7 +54,7 @@ export default class App extends Component {
   render() {
     return (
       <main className='App'>
-        <UserWindow />
+        <UserWindow {...this.state}/>
         <Map {...this.state} />
       </main>
     )

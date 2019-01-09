@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { DebounceInput } from 'react-debounce-input'
 
+// Component
+import ResultsWindow from './ResultsWindow'
+
 export default class UserWindow extends Component {
     constructor(props) {
         super(props)
@@ -21,11 +24,9 @@ export default class UserWindow extends Component {
                         minLength={2}
                         debounceTimeout={225}
                     />
+
+                    <ResultsWindow {...this.props}/>
                 
-                </div>
-
-                <div className="results-window">
-
                 </div>
 
             </div>

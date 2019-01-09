@@ -29,6 +29,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                                     <section className="info-window">
 
                                         <h1>{markerInfo.venue.name}</h1>
+                                        <hr></hr>
 
                                         <h2>Brief Summary:</h2>
                                         <p>{markerInfo.reasons.items[0].summary}</p>
