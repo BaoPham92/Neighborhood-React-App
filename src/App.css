@@ -37,16 +37,18 @@ h3 {
     height: 40vmin;
     position: fixed;
     margin: 10px;
-    background-color: rgb(255, 255, 255, .8);
+    background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
     border-radius: 4px;
     top: 100px;
     left: 0;
     z-index: 999;
+    opacity: .3;
+    transition: opacity .6s;
 }
 
 .search-box:hover {
-    background-color: rgb(255, 255, 255, 1);
+    opacity: .95;
 }
 
 .search-box input {
