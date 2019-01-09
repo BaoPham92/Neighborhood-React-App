@@ -85,6 +85,10 @@ h3 {
 
 /* Results-List CSS */
 
+.Results-Window {
+    overflow: auto;
+}
+
 .Results-List {
     font-size: 1em;
     list-style-type: none;

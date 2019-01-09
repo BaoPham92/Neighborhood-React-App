@@ -13,7 +13,6 @@ export default class App extends Component {
     super(props)
 
     this.state = {
-      query: '',
       center: [],
       venues: [],
       markers: [],
@@ -27,6 +26,10 @@ export default class App extends Component {
           return index
         })
       },
+      
+      updateMarkers: (updatedMarkers) => {
+        this.setState(updatedMarkers)
+      }
     }
   }
 

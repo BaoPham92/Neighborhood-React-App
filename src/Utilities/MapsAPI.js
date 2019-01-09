@@ -8,10 +8,10 @@ class apiUtility {
             client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
             client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',
             v: '20180323',
-            near: `New York City, NY`,
+            near: `Washington`,
             query: 'coffee',
-            limit: 10,
-            radius: 50
+            limit: 5,
+            radius: 500
         }
 
         // axios API call for returning information based on criterias from (params) variable above.

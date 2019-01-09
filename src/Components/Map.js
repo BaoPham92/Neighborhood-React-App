@@ -12,7 +12,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
                 // Infowindow info if title === marker title
                 const markerInfo = props.venues.find(index => index.venue.name === marker.title)
-                console.log(markerInfo)
 
                 return (
                     <Marker
