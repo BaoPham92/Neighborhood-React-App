@@ -14,6 +14,13 @@ h3 {
     margin-bottom: 5px;
 }
 
+ul,
+li {
+    padding-inline-start: 10px;
+    padding-inline-end: 10px;
+    margin: .3em 0;
+}
+
 /* Class Component CSS */
 
 .App {
@@ -43,12 +50,12 @@ h3 {
     top: 100px;
     left: 0;
     z-index: 999;
-    opacity: .3;
+    opacity: .8;
     transition: opacity .6s;
 }
 
 .search-box:hover {
-    opacity: .95;
+    opacity: .98;
 }
 
 .search-box input {
@@ -74,4 +81,15 @@ h3 {
 .info-window h2,
 h3 {
     font-size: .9em;
+}
+
+/* Results-List CSS */
+
+.Results-List {
+    font-size: 1em;
+    list-style-type: none;
+    text-align: center;
+    background-color: grey;
+    padding: 5px;
+    border-radius: 4px;
 }
