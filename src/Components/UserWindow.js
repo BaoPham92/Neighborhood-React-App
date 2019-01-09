@@ -14,15 +14,12 @@ export default class UserWindow extends Component {
             <div className="user-window">
 
                 <div className="search-box">
-                    <p>Search Activities:</p>
 
                     <DebounceInput
                         type="text"
-                        placeholder="Food, etc."
+                        placeholder="Search Places"
                         minLength={2}
                         debounceTimeout={225}
-                        onChange={(e) => { this.props.queryHandler(e.target.value) }}
-                        value={this.props.query}
                     />
                 
                 </div>

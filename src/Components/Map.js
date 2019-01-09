@@ -35,7 +35,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
                                         <h3>Type Of Place:</h3>
                                         <p>{markerInfo.venue.categories[0].name}</p>
-                                        
+
                                         <h3>Location And Hours:</h3>
                                         <p>{markerInfo.venue.location.address}</p>
 
@@ -56,16 +56,14 @@ export default class Map extends Component {
 
     render() {
         return (
-            <div>
-                < MyMapComponent
-                    {...this.props}
-                    isMarkerShown
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3"
-                    loadingElement={< div style={{ height: `100%` }} />}
-                    containerElement={< div style={{ height: `400px` }} />}
-                    mapElement={< div style={{ height: `100%` }} />}
-                />
-            </div>
+            < MyMapComponent
+                {...this.props}
+                isMarkerShown
+                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3"
+                loadingElement={< div style={{ height: `100%` }} />}
+                containerElement={< div style={{ height: `100%`, width: '100%' }} />}
+                mapElement={< div style={{ height: `100%` }} />}
+            />
         )
     }
 }

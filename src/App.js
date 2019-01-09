@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import './App.css'
 
-// Components 
+// Components
 import Map from './Components/Map.js'
+import UserWindow from './Components/UserWindow.js'
 
+// Utility Component
 import MapAPI from './Utilities/MapsAPI.js'
 
 export default class App extends Component {
@@ -52,6 +54,7 @@ export default class App extends Component {
   render() {
     return (
       <main className='App'>
+        <UserWindow />
         <Map {...this.state} />
       </main>
     )

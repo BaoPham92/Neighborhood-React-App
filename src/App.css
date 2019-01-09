@@ -6,24 +6,36 @@ body {
     padding: 0;
 }
 
+/* Class Component CSS */
+.App {
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Map Container CSS */
 #map {
     height: 100vh;
     width: 100vw;
 }
 
 /* UserWindow Component CSS */
-
 .search-box {
-    display: grid;
-    grid-template-columns: 20vmin;
+    display: flex;
+    flex-direction: column;
+    width: 26.5vmin;
+    height: 40vmin;
     position: fixed;
     margin: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255, .8);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px -1px;
     border-radius: 4px;
-    top: 55px;
+    top: 100px;
     left: 0;
     z-index: 999;
+}
+
+.search-box:hover {
+    background-color: rgb(255, 255, 255, 1);
 }
 
 .search-box input {
