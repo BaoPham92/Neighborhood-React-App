@@ -86,7 +86,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <main className='App'>
+      <main 
+      className='App'
+      role="main">
         <UserWindow {...this.state} />
         <Map {...this.state} />
       </main>

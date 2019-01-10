@@ -34,6 +34,8 @@ export default class UserWindow extends Component {
                 <div className="search-box">
 
                     <DebounceInput
+                        // 0 because of search / input forms should focusable
+                        tabIndex="0"
                         type="text"
                         placeholder="Search Places"
                         debounceTimeout={125}

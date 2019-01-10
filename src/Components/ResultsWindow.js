@@ -13,6 +13,9 @@ export default class ResultsWindow extends Component {
                         key={index.id}
                         className="Results-List"
                         onClick={() => this.props.itemToggle(index)}
+                        role="list"
+                        // 1 priority of input, & lowercase tabindex for regular li
+                        tabindex="1"
                         >
                         {index.name}
                     </li>

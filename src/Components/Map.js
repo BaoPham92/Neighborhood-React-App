@@ -18,6 +18,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
                     return (
                         <Marker
+                            tabIndex="2"
                             key={marker.id}
                             position={{ lat: marker.lat, lng: marker.lng }}
                             title={marker.title}
@@ -28,7 +29,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                             {marker.isActive && markerInfo.menu && (
                                 <InfoWindow>
                                     <React.Fragment>
-                                        <section className="info-window">
+                                        <section 
+                                        className="info-window"
+                                        role="conteninfot">
 
                                             <h1>{markerInfo.name}</h1>
                                             <hr></hr>
@@ -60,7 +63,8 @@ export default class Map extends Component {
     render() {
         return (
             < MyMapComponent
-                {...this.props}
+            {...this.props}
+                role="application" aria-label="Restaurant locations"
                 isMarkerShown
                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3"
                 loadingElement={< div style={{ height: `100%` }} />}
