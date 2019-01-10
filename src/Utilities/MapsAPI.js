@@ -23,6 +23,9 @@ class apiUtility {
                 "Content-Type": "application/json"
             }
         })
+        .catch((error) => {
+             console.log(new Error(`Error when making Axios API Get call for (search)\n${error}`))
+        })
     }
     static idFetch(inputId) {
         
@@ -41,6 +44,9 @@ class apiUtility {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             }
+        })
+        .catch((error) => {
+             console.log(new Error(`Error when making Axios API Get call for (venues)\n${error}`))
         })
     }
 
@@ -61,6 +67,9 @@ class apiUtility {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             }
+        })
+        .catch((error) => {
+             console.log(new Error(`Error when making Axios API Get call for (menu)\n${error}`))
         })
     }
 }

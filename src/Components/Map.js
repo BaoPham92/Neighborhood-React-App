@@ -81,7 +81,7 @@ const checker = () => {
     for (const index of scripts) {
         index.async = true
         index.defer = true
-        console.log(index)
+        // console.log(index)
     }
 }
 window.checker = checker

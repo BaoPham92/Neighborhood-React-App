@@ -42,6 +42,11 @@ export default class App extends Component {
             const newVenue = Object.assign(venue, res.data.response.venue)
             this.setState({ venues: Object.assign(this.state.venues, newVenue) })
           })
+          // This error (alert) call handles bot API GETs as these are both in a function.
+          .catch((error) => {
+            alert(`${error} ${this.state.messageState.error429}`)
+            console.log(`${error} ${this.state.messageState.console429}`)
+          })
 
         // The best, food API calls for menus.
         MapAPI.idMenu(marker.id)
@@ -49,9 +54,7 @@ export default class App extends Component {
             const newVenue = Object.assign(venue, res.data.response.menu)
             this.setState({ venues: Object.assign(this.state.venues, newVenue) })
           })
-          // This error handles bot API GETs as these are both in a function.
           .catch((error) => {
-            alert(`${error} ${this.state.messageState.error429}`)
             console.log(`${error} ${this.state.messageState.console429}`)
           })
       },
