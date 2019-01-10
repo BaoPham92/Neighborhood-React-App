@@ -38,3 +38,5 @@ __Service Worker:__
 ---
 
 1) Todo: Large portion and loss of time on this project was attempting to understand the documentations for [react-google-maps](https://tomchentw.github.io/react-google-maps/#introduction) whilst implementing a use for Polygons. My first interest in Maps is this feature.
+
+2) Todo: Search on languages for possible universal language implementation. Maps is used globally afterall.
