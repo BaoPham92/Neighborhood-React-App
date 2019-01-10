@@ -16,18 +16,22 @@ export default class App extends Component {
       center: [],
       venues: [],
       markers: [],
+      messageState: {
+        error429: `\n\n(The HTTP 429 Too Many Requests response status code indicates the user has sent too many requests in a given amount of time ("rate limiting")).\n\nCited by: developer.mozilla.org`,
+        console429: `visit: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/429 for more information.`
+      },
       toggleMarkerOff: () => {
         const marker = this.state.markers.map(marker => {
           marker.isActive = false
           return marker
         })
-        this.setState({markers: Object.assign(this.state.markers, marker)})
+        this.setState({ markers: Object.assign(this.state.markers, marker) })
       },
       toggleMarker: marker => {
         this.state.toggleMarkerOff()
 
         marker.isActive = true
-        this.setState({markers: Object.assign(this.state.markers, marker)})
+        this.setState({ markers: Object.assign(this.state.markers, marker) })
 
         const venue = this.state.venues.find(veneu => veneu.id === marker.id)
 
@@ -39,11 +43,16 @@ export default class App extends Component {
             this.setState({ venues: Object.assign(this.state.venues, newVenue) })
           })
 
-          // The best, food API calls for menus.
-          MapAPI.idMenu(marker.id)
+        // The best, food API calls for menus.
+        MapAPI.idMenu(marker.id)
           .then((res) => {
             const newVenue = Object.assign(venue, res.data.response.menu)
             this.setState({ venues: Object.assign(this.state.venues, newVenue) })
+          })
+          // This error handles bot API GETs as these are both in a function.
+          .catch((error) => {
+            alert(`${error} ${this.state.messageState.error429}`)
+            console.log(`${error} ${this.state.messageState.console429}`)
           })
       },
       updateMarkers: (updatedMarkers) => {
@@ -86,9 +95,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <main 
-      className='App'
-      role="main">
+      <main
+        className='App'
+        role="main">
         <UserWindow {...this.state} />
         <Map {...this.state} />
       </main>
