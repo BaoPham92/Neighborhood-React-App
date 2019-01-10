@@ -10,7 +10,6 @@ export default class UserWindow extends Component {
         super(props)
         this.state = {
             query: '',
-            prevMarkers: []
         }
     }
     markerFinder = (e) => {

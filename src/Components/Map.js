@@ -13,7 +13,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                 .map((marker) => {
 
                     // Infowindow info if title === marker title
-                    const markerInfo = props.venues.find(index => index.name === marker.title)
+                    const markerInfo = props.venues.find(index => index.id === marker.id)
                     // console.log(markerInfo)
 
                     return (
@@ -25,7 +25,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                         >
 
                             {/* InforWindow data render upon contional */}
-                            {marker.isActive && markerInfo && (
+                            {marker.isActive && markerInfo.menu && (
                                 <InfoWindow>
                                     <React.Fragment>
                                         <section className="info-window">
@@ -38,6 +38,9 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
 
                                             <h3>Location And Hours:</h3>
                                             <p>{markerInfo.location.address}</p>
+
+                                            <h2>Something To Eat?</h2>
+                                            <p>{markerInfo.menus.count}</p>
 
                                         </section>
                                     </React.Fragment>

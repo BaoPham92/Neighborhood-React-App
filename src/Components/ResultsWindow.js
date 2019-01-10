@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class ResultsWindow extends Component {
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <ul className="Results-Window">
             {/* To toggle infowindow onClick and list markers */}
