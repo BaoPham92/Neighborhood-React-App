@@ -66,7 +66,7 @@ export default class Map extends Component {
             {...this.props}
                 role="application" aria-label="Restaurant locations"
                 isMarkerShown
-                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3"
+                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyBglNEQSJfyWYuoGeyTCS5IyCoawoPMR0s&v=3&callback=checker"
                 loadingElement={< div style={{ height: `100%` }} />}
                 containerElement={< div style={{ height: `100%`, width: '100%' }} />}
                 mapElement={< div style={{ height: `100%` }} />}
@@ -74,3 +74,14 @@ export default class Map extends Component {
         )
     }
 }
+
+// Since there are multiple import instances of google maps api script tags. We will set defer and async to true.
+const checker = () => {
+    const scripts = window.document.getElementsByTagName('script')
+    for (const index of scripts) {
+        index.async = true
+        index.defer = true
+        console.log(index)
+    }
+}
+window.checker = checker
