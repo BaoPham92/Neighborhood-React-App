@@ -1,3 +1,8 @@
+/* global google */
+
+// https://stackoverflow.com/a/51198724/9154831
+// Oddly had trouble with figuring out the answer I couldn't find at https://tomchentw.github.io/react-google-maps/
+
 import React, { Component } from 'react'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker, InfoWindow } from 'react-google-maps'
 
@@ -23,6 +28,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                             position={{ lat: marker.lat, lng: marker.lng }}
                             title={marker.title}
                             onClick={() => props.toggleMarker(marker)}
+                            defaultAnimation={google.maps.Animation.DROP}
+                            animation={marker.isActive && google.maps.Animation.BOUNCE }
                         >
 
                             {/* InforWindow data render upon contional */}
