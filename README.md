@@ -32,5 +32,9 @@ If you'd like for me to review yours and possibly provide feedback as well, feel
 - [Twitter](https://twitter.com/CodeCuza)
 
 ---
+__Service Worker:__
+
+> SW has been registered now. If you wish to use turn off, navigate to index.js and find ``` serviceWorker.register() ``` and change too ``` serviceWorker.unregister() ``` for development purposes.
+---
 
 1) Todo: Large portion and loss of time on this project was attempting to understand the documentations for [react-google-maps](https://tomchentw.github.io/react-google-maps/#introduction) whilst implementing a use for Polygons. My first interest in Maps is this feature.
