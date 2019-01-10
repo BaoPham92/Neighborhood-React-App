@@ -78,8 +78,7 @@ li {
     margin-bottom: 3px;
 }
 
-.info-window 
-h2,
+.info-window h2,
 h3 {
     font-size: .9em;
 }
@@ -91,10 +90,11 @@ h3 {
 }
 
 .Results-List {
-    font-size: 1em;
+    font-size: .95em;
+    font-weight: bold;
     list-style-type: none;
     text-align: center;
-    background-color: grey;
+    background-color: rgba(234, 66, 54);
     padding: 5px;
     border-radius: 4px;
 }

@@ -10,8 +10,8 @@ class apiUtility {
             v: '20180323',
             near: nearId,
             query: queryId,
-            limit: 3,
-            radius: 500
+            limit: 20,
+            radius: 2500
         }
 
         // axios API call for returning information based on criterias from (params) variable above.
