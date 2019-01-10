@@ -21,4 +21,16 @@ After downloading / cloning the repo run:
 
 Everything in the readme doccumentation is subject to change. This is currently a documentation of a repo in development and not yet fully published for use. Will update further on the status. 
 
-There is currently a big confusion I have using the google maps react packages. Seeing as there is a big source code for google maps, I will enjoy using third party sources. I attempted to do polygon mapping with the source packages, but I couldn't pin it down. Definitely need to revisit that. I lost the most time pressing to get that working, but decided to put a temp hold on that until I can understand the source better. 
+__Contributions__
+
+I notice unique cloners and viewers on the repo. If you happen to have a suggestion for a template example by pull requests, or by contact would be much appreciated to increase the production speed.
+
+If you'd like for me to review yours and possibly provide feedback as well, feel free to contact me of any of preferred choice / platform.:
+
+- [FaceBook](https://www.facebook.com/baophamga)
+- [StackOverflow](https://chat.stackoverflow.com/users/9154831/bao-pham)
+- [Twitter](https://twitter.com/CodeCuza)
+
+---
+
+1) Todo: Large portion and loss of time on this project was attempting to understand the documentations for [react-google-maps](https://tomchentw.github.io/react-google-maps/#introduction) whilst implementing a use for Polygons. My first interest in Maps is this feature.
