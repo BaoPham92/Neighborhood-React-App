@@ -29,6 +29,8 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                             {marker.isActive && markerInfo.menu && (
                                 <InfoWindow>
                                     <React.Fragment>
+
+                                        {/* Information provided by https://developer.foursquare.com/ */}
                                         <section 
                                         className="info-window"
                                         role="conteninfot">

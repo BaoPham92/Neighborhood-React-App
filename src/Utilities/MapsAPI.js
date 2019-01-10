@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 class apiUtility {
+    /* Information provided by https://developer.foursquare.com/ */
     static callFetch(nearId, queryId) {
         
         // Parameter / configuration
