@@ -10,13 +10,13 @@ class apiUtility {
         
         // Parameter / configuration
         const params = {
-            client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
-            client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',
+            client_id: '3S3Z01DGDZKC512ISDMGGJ1OCFBSHTB0CPN4HKXQ1HFSFBAX',
+            client_secret: 'WXUKLTPIEAVA1INPRRXZJFUCMQFBPOVW3VMKXBH4M3L5IPKR',
             v: '20180323',
             near: nearId,
             query: queryId,
-            limit: 20,
-            radius: 25000
+            limit: 10,
+            radius: 2500
         }
 
         // axios API call for returning information based on criterias from (params) variable above.
@@ -52,8 +52,8 @@ class apiUtility {
         
         // Parameter / configuration
         const params = {
-            client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
-            client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',
+            client_id: '3S3Z01DGDZKC512ISDMGGJ1OCFBSHTB0CPN4HKXQ1HFSFBAX',
+            client_secret: 'WXUKLTPIEAVA1INPRRXZJFUCMQFBPOVW3VMKXBH4M3L5IPKR',
             v: '20180323'
         }
 
@@ -91,8 +91,8 @@ class apiUtility {
         
         // Parameter / configuration
         const params = {
-            client_id: 'ASE15TC355LVRR3ALKLNPHGWC54CTLVBSQDRZZFTDLEDUSJH',
-            client_secret: 'RNFGZWHNN3WSLDOZXBBTHB3DSHC3PW01VKIOE0WTFJSYNHIJ',
+            client_id: '3S3Z01DGDZKC512ISDMGGJ1OCFBSHTB0CPN4HKXQ1HFSFBAX',
+            client_secret: 'WXUKLTPIEAVA1INPRRXZJFUCMQFBPOVW3VMKXBH4M3L5IPKR',
             v: '20180323'
         }
 
