@@ -33,7 +33,7 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                         >
 
                             {/* InforWindow data render upon contional */}
-                            {marker.isActive && markerInfo.menu && (
+                            {marker.isActive && (
                                 <InfoWindow>
                                     <React.Fragment>
 
@@ -52,7 +52,6 @@ const MyMapComponent = withScriptjs(withGoogleMap((props) =>
                                             <p>{markerInfo.location.address}</p>
 
                                             <h2>Something To Eat?</h2>
-                                            <p>{markerInfo.menus.count}</p>
 
                                         </section>
                                     </React.Fragment>
