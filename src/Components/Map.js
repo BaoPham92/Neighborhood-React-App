@@ -93,3 +93,16 @@ const checker = () => {
     }
 }
 window.checker = checker
+
+// here you define your authentication failed message
+window.gm_authFailure = () => {
+
+    alert(`
+    Error with authentication for Google Maps.
+
+    Attempt to troubleshoot by:
+
+    - Checking the API key for Google Maps.
+    - Checking the API key console for any limitations.
+    `)
+}
