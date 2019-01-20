@@ -1,10 +1,12 @@
 import axios from 'axios'
 
+// TODO: The below is to be fiddled for Axios intercept method implementations.
 const instance = axios.create();
 
-instance.defaults.timeout = 2000;
+instance.defaults.timeout = 2000; // Timeout to help prevent 400 errors.
 
 class apiUtility {
+    
     /* Information provided by https://developer.foursquare.com/ */
     static callFetch(nearId, queryId) {
         

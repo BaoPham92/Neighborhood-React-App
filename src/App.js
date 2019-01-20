@@ -60,7 +60,8 @@ export default class App extends Component {
       // Toggle infoWindow for items.
       itemToggle: venue => {
         const marker = this.state.markers.find(marker => marker.id === venue.id)
-        console.log(venue, marker, this.state.markers)
+        console.log(venue)
+        console.log(marker, this.state.markers)
 
         this.state.toggleMarker(marker)
       }

@@ -14,7 +14,7 @@ export default class ResultsWindow extends Component {
                         className="Results-List"
                         onClick={() => this.props.itemToggle(index)}
                         role="list"                        
-                        tabindex="1" // 1 priority of input, & lowercase tabindex for regular li
+                        tabIndex="1" // 1 priority of input, & lowercase tabindex for regular li
                         >
                         {/* Information provided by https://developer.foursquare.com/ */}
                         {index.name}
