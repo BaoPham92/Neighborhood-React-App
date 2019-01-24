@@ -17,6 +17,8 @@ After downloading / cloning the repo run:
 
 - [react-google-maps & explanations](https://tomchentw.github.io/react-google-maps/#introduction) Is the website that gave me insight on using a more clean approach rather than the previous map setup of building and appending a script tag to initialize the [Google Maps](https://developers.google.com/maps/documentation/) within ReactJS as one example.
 
+- [gh-pages deployment](https://codeburst.io/deploy-react-to-github-pages-to-create-an-amazing-website-42d8b09cd4d)
+
 ## Notes / Todos:
 
 Everything in the readme doccumentation is subject to change. This is currently a documentation of a repo in development and not yet fully published for use. Will update further on the status. 
